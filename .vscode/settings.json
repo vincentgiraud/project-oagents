@@ -1,4 +1,5 @@
 {
     "dotnet.defaultSolution": "Microsoft.AI.Agents.sln",
     "debug.internalConsoleOptions": "neverOpen",
+    "prompty.currentModelConfiguration": "default",
 }

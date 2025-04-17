@@ -46,31 +46,50 @@ Privacy information can be found at <https://privacy.microsoft.com/en-us/>
 Microsoft and any contributors reserve all other rights, whether under their respective copyrights, patents,
 or trademarks, whether by implication, estoppel or otherwise.
 
-# VGI notes
+# Notes for gh-flow
+
+## Qdrant
+
+After running `dotnet run` to create the index with well architected framework pdf you can check by clicking the Docker icon, right-clicking qdrant/qdrant>Open in brower on localhost:6333/dashboard. Click on `waf`and see all chunks.
 
 ## Missing devtunnel
-```shell
+
+```zsh
 curl -sL https://aka.ms/DevTunnelCliInstall | bash
-source ~/.profile [or ~/.zshrc]
+source ~/.zshrc
 devtunnel user login
 devtunnel host gh-flow-demo
 ```
-Update webhook at https://github.com/settings/apps/demo-gh-flow-app
+
+Update webhook at https://github.com/settings/apps/<GH_APP_NAME>
 with https://xxxxxxxxx-xxxx.uks1.devtunnels.ms/api/github/webhooks
 
-Debug webhook at https://github.com/settings/apps/demo-gh-flow-app/advanced
+Debug webhook at https://github.com/settings/apps/<GH_APP_NAME>/advanced
 
 ## Run app
 
 Under solution explorer: Right-click OAgents>samples>Microsoft.AI.DevTeam>Debug>Start an new instance
 
-## Create issue
+## Scenario
+
+1. create an issue
 
 Todo scaffold
 
 I’d like to build a typical Todo List Application: a simple productivity tool that allows users to create, manage, and track tasks or to‑do items.
+
 Key features of the Todo List application include the ability to add, edit, and delete tasks, set due dates and reminders, categorize tasks by project or priority, and mark tasks as complete.
+
 The Todo List application also offer collaboration features, such as sharing tasks with others or assigning tasks to team members.
+
 Additionally, the Todo List application will offer mobile and web‑based interfaces, allowing users to access their tasks from anywhere.
+
 Use C# as the language.
+
 The app needs to be deployed to Azure, be highly performant, cost effective and secure, following the rules of Well Architected Framework.
+
+2. Then comment the "PM.Readme chain for #XX" issue after commented generation: Can you please add a diagram to the reamde above? Use mermaid for markdown diagrams
+3. Then after commented generation comment: "Perfect, looks good, can you now merge the diagram with the readme?" Once generation done, close the issue.
+4. Go the "DevLead.Plan chain for #XX" issue. See the generated comment. Close the issue.
+5. Go to "Todo app scaffold" #XX issue, look at all comments and series of "Developer.Implement chain for #XX". Check a few see the generated comments.
+6. Close all issues.
